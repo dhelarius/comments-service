@@ -21,6 +21,19 @@
     "url": "https://github.com/dhelarius/comments-service/issues"
   },
   "homepage": "https://github.com/dhelarius/comments-service#readme",
+  "dependencies": {
+    "@devmastery/pipe": "0.0.8",
+    "axios": "^0.21.1",
+    "babel-plugin-inline-dotenv": "^1.6.0",
+    "body-parser": "^1.19.0",
+    "cuid": "^2.1.8",
+    "express": "^4.17.1",
+    "ip-regex": "^4.3.0",
+    "is-valid-email": "0.0.5",
+    "mongodb": "^3.6.9",
+    "p-reduce": "^3.0.0",
+    "sanitize-html": "^2.4.0"
+  },
   "devDependencies": {
     "@babel/cli": "^7.14.3",
     "@babel/core": "^7.14.3",
@@ -36,6 +49,8 @@
     "eslint-plugin-standard": "^5.0.0",
     "faker": "^5.5.3",
     "jest": "^27.0.4",
-    "nodemon": "^2.0.7"
+    "mongodb-memory-server": "^6.9.6",
+    "nodemon": "^2.0.7",
+    "rimraf": "^3.0.2"
   }
 }
