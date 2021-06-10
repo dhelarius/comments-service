@@ -4,7 +4,14 @@
   "description": "Microservice to manage comments",
   "main": "index.js",
   "scripts": {
-    "test": "jest src --watch"
+    "build": "npm run clean && babel src -d dist",
+    "now-build": "npm run build",
+    "clean": "rimraf dist",
+    "db": "babel-node ./db/index.js",
+    "dev": "nodemon --exec babel-node ./src/index.js",
+    "start": "npm run clean && npm run build && npm run db && cd dist && node index.js",
+    "test": "jest src --watch",
+    "test:e2e": "jest ./__test__ --runInBand"
   },
   "repository": {
     "type": "git",
@@ -21,6 +28,12 @@
     "url": "https://github.com/dhelarius/comments-service/issues"
   },
   "homepage": "https://github.com/dhelarius/comments-service#readme",
+  "jest": {
+    "verbose": false,
+    "globalSetup": "./jest-setup.js",
+    "globalTeardown": "./jest-teardown.js",
+    "testEnvironment": "./jest-mongo.js"
+  },
   "dependencies": {
     "@devmastery/pipe": "0.0.8",
     "axios": "^0.21.1",
